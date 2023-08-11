@@ -1,0 +1,34 @@
+@import 'utils';
+@import 'reset';
+
+.header {
+    @include minflex(flex, row, nowrap, space-between, center);
+    padding: 18px 40px;
+    @include neom(0, 5px);
+    
+    &_logo {
+        padding: 16px 38px;
+        border: 1px solid #000;
+        @include neom(0, 8px);
+    }
+    &_nav {
+    }
+    &_ul {
+        @include minflex(flex, row, nowrap, space-between, center);
+        gap: 30px;
+    }
+    &_li {
+    }
+    &_a {
+        padding: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 40px;
+
+        &:hover {
+            background-color: $light-bg-color;
+            color: violet;
+            transform: scale(1.3);
+        }
+    }
+}

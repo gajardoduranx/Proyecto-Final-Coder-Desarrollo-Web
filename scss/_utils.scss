@@ -1,0 +1,27 @@
+// ------- Variables ----------
+
+/* Claros y oscuros */
+$white-color: #ffffff;
+$light-bg-color: #f2f3f5;
+$light-text-color: #7c899a;
+$border-color: #e5e8ec;
+$dark-color: #0a021c;
+
+/* Tamaños fuentes de texto */
+$font-small: 13px;
+$font-smaller: 11px;
+
+
+@mixin minflex($dis, $direct, $corte, $just, $align) {
+    display: $dis;
+    flex-flow: $direct $corte;
+    justify-content: $just;
+    align-items: $align;
+  }
+
+  @mixin neom($borde, $eje) {
+    border-radius: $borde;
+    background: #e0e0e0;
+    box-shadow: $eje $eje ($eje*2) #bebebe,
+              (-$eje) (-$eje) ($eje*2) #ffff;
+  }
