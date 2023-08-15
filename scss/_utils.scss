@@ -12,16 +12,36 @@ $font-small: 13px;
 $font-smaller: 11px;
 
 
-@mixin minflex($dis, $direct, $corte, $just, $align) {
-    display: $dis;
-    flex-flow: $direct $corte;
-    justify-content: $just;
-    align-items: $align;
-  }
+// Mixins
 
-  @mixin neom($borde, $eje) {
-    border-radius: $borde;
-    background: #e0e0e0;
-    box-shadow: $eje $eje ($eje*2) #bebebe,
-              (-$eje) (-$eje) ($eje*2) #ffff;
+@mixin mixflex($dis, $direct, $corte, $just, $align) {
+  display: $dis;
+  flex-flow: $direct $corte;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin neom($borde, $eje) {
+  border-radius: $borde;
+  background: #faf8f8;
+  box-shadow: $eje $eje (
+    $eje*2) #bebebe,
+    (-$eje) (-$eje) ($eje*2) #ffff;
+}
+
+@mixin minmovil($medida: 480px) {
+  @media screen and (max-width: $medida) {
+    @content;
   }
+}
+
+@mixin mingrid($column, $espacio) {
+  display: grid;
+  grid-template-columns: $column auto;
+  gap: $espacio;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    gap: 0em;
+  }
+}

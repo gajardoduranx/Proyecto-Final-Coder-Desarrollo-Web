@@ -1,0 +1,122 @@
+
+// ESTILOS DE LAS PÁGINAS FRONTEND Y BACKEND
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+    
+
+/* font-family: 'Open Sans', sans-serif; */
+
+$fondo: #f2f2f2;
+$color-temario: #c9c9c9;
+$temario-active: #821acc;
+$temario-active-border: #821acc;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: $fondo;
+    font-family: 'Open Sans', sans-serif;
+}
+.presentacion {
+    padding: 40px;
+    width: 80%;
+    text-align: start;
+
+    h1 {
+        font-weight: 600;
+        margin: 50px 0;
+    }
+    p {
+        text-align: start;
+        font-size: 1.2rem;
+    }
+}
+
+.contenedor {
+    max-width: 1100px;
+    width: 98%;
+    margin: 0 auto;
+    @include mingrid(30%, 10px);
+    
+    aside {
+        padding: 0 15px;
+        @include minmovil(700px) {
+            margin-bottom: 50px;
+        }
+    }
+    & .titulo {
+        margin-bottom: 10px;
+    }
+    & .contenedor-temario {
+        padding-top: 20px;
+        position: sticky;
+        top: 0;
+    }
+    & .lista {
+        list-style: none;
+        border-left: 2px solid $color-temario;
+        border-right: 2px solid $color-temario;
+        padding-left: 10px;
+        margin-left: 10px;
+        & li {
+            position: relative;
+            & a {
+                display: block;
+                color: #5a5a5a;
+                padding: 15px 10px;
+                transition: .3s ease all;
+                text-decoration: none;
+            }
+            &:hover a,
+            &.activo a {
+                color: #000;
+            }
+            &::before {
+                content: '';
+                display: block;
+                height: 12px;
+                width: 12px;
+                background: $fondo;
+                border: 2px solid $color-temario;
+                position: absolute;
+                left: -17px;
+                top: calc(50% - 6px);
+                transform: rotate(45deg);
+                transition: .3s ease all;
+            }
+            &.activo::before {
+                background: $temario-active;
+                border: 2px solid $temario-active-border;
+            }
+            &:hover::before {
+                border: 2px solid $temario-active-border;
+            }
+        }
+    }
+}
+
+main {
+    min-height: 2000px;
+    
+    .card {
+        margin: 20px 0;
+        padding: 40px;
+        background: #fff;
+        border: #821acc 2px solid;
+        @include neom(4px, 20px);
+
+        .btn {
+            background-color: #821acc;
+            color: #fff;
+            width: 200px;
+            margin: 20px auto 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.carta {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 3px solid #b21ac6;
+    
+    @include mingrid(600px, 30px);
+
+    &_article {
+        max-width: 600px;
+        min-height: 300px;
+        padding: 40px;
+        @include neom(30px, 30px);
+
+        h4 {
+            font-size: 2rem;
+        }
+    }
+}
