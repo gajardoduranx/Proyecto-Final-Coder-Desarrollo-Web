@@ -29,6 +29,13 @@ $font-smaller: 11px;
     (-$eje) (-$eje) ($eje*2) #ffff;
 }
 
+@mixin back-img($url) {
+  background: url($url),
+    linear-gradient(to bottom right, rgba(29, 5, 30, 0.122), rgba(111, 55, 164, 1)
+  );
+background-size: contain;
+}
+
 @mixin minmovil($medida: 480px) {
   @media screen and (max-width: $medida) {
     @content;

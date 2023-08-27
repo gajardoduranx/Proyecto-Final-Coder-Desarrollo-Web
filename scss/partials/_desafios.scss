@@ -2,18 +2,23 @@
     max-width: 1200px;
     margin: 30px auto;
     padding: 30px;
-    border: 3px solid #b21ac6;
     
-    @include mingrid(600px, 30px);
-
+    @include mingrid(560px, 30px);
+    gap: 30px;
+    
     &_article {
-        max-width: 600px;
+        border: 3px solid #b21ac6;
+        max-width: 600px;   
         min-height: 300px;
-        padding: 40px;
+        padding: 60px;
+        text-align: center;
+        margin-bottom: 30px;
         @include neom(30px, 30px);
 
         h4 {
             font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
         }
     }
 }
